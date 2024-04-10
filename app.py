@@ -218,20 +218,20 @@ title = r"""
 """
 
 description = r"""
-<b>Official 🤗 Gradio demo</b> for <a href='https://github.com/InstantStyle/InstantStyle' target='_blank'><b>InstantStyle: Free Lunch towards Style-Preserving in Text-to-Image Generation</b></a>.<br>
+<b>InstantStyle 官方Gradio demo</b> for <a href='https://github.com/InstantStyle/InstantStyle' target='_blank'><b>InstantStyle: 在文本到图像生成中实现风格保留！</b></a>.<br>
 
-How to use:<br>
-1. Upload a style image.
-2. Set stylization mode, only use style block by default.
-2. Enter a text prompt, as done in normal text-to-image models.
-3. Click the <b>Submit</b> button to begin customization.
-4. Share your stylized photo with your friends and enjoy! 😊
+如何使用:<br>
+1. 上传风格图片.
+2. 设置stylization模式, 默认仅使用style block.
+2. 输入文本提示词, 就像普通的文生图模型一样.
+3. 单击 <b>Submit</b> 按钮开始定制图片.
+4. 与您的朋友分享您的风格化照片! 😊
 
 
-Advanced usage:<br>
-1. Click advanced options.
-2. Upload another source image for image-based stylization using ControlNet.
-3. Enter negative content prompt to avoid content leakage.
+高级功能:<br>
+1. 单击 advanced options.
+2. 使用ControlNet上传另一个源图像以进行基于图像的风格化.
+3. 输入negative content prompt.
 """
 
 article = r"""
