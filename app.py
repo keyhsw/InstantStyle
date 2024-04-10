@@ -9,8 +9,8 @@ import random
 import numpy as np
 from PIL import Image
 from diffusers import ControlNetModel, StableDiffusionXLControlNetPipeline
+from modelscope import snapshot_download
 
-import spaces
 import gradio as gr
 from huggingface_hub import hf_hub_download
 
@@ -18,7 +18,7 @@ from ip_adapter import IPAdapterXL
 
 import os
 os.system("git lfs install")
-os.system("git clone https://huggingface.co/h94/IP-Adapter")
+os.system("git clone https://www.modelscope.cn/AI-ModelScope/IP-Adapter.git")
 os.system("mv IP-Adapter/sdxl_models sdxl_models")
 
 # global variable
@@ -27,11 +27,11 @@ device = "cuda" if torch.cuda.is_available() else "cpu"
 dtype = torch.float16 if str(device).__contains__("cuda") else torch.float32
 
 # initialization
-base_model_path = "stabilityai/stable-diffusion-xl-base-1.0"
+base_model_path = snapshot_download("AI-ModelScope/stable-diffusion-xl-base-1.0")
 image_encoder_path = "sdxl_models/image_encoder"
 ip_ckpt = "sdxl_models/ip-adapter_sdxl.bin"
 
-controlnet_path = "diffusers/controlnet-canny-sdxl-1.0"
+controlnet_path = snapshot_download("AI-ModelScope/controlnet-canny-sdxl-1.0")
 controlnet = ControlNetModel.from_pretrained(controlnet_path, use_safetensors=False, torch_dtype=torch.float16).to(device)
 
 # load SDXL pipeline
@@ -142,7 +142,7 @@ def run_for_examples(style_image, source_image, prompt, scale, control_scale):
         neg_content_scale=0,
     )
 
-@spaces.GPU(enable_queue=True)
+
 def create_image(image_pil,
                  input_image,
                  prompt,
