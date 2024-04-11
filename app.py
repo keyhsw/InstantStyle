@@ -205,6 +205,7 @@ def create_image(image_pil,
                                 image=canny_map,
                                 controlnet_conditioning_scale=float(control_scale),
                                 )
+    torch.cuda.empty_cache()
     return images
 
 def pil_to_cv2(image_pil):
