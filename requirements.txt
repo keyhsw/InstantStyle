@@ -10,7 +10,7 @@ omegaconf
 peft
 huggingface-hub>=0.20.2
 opencv-python
-gradio
+gradio==4.26.0
 controlnet_aux
 gdown
 peft
