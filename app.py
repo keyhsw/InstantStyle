@@ -17,7 +17,6 @@ from huggingface_hub import hf_hub_download
 from ip_adapter import IPAdapterXL
 
 import os
-os.system("git lfs install")
 os.system("git clone https://www.modelscope.cn/AI-ModelScope/IP-Adapter.git")
 os.system("mv IP-Adapter/sdxl_models sdxl_models")
 
