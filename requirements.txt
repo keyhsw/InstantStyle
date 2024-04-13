@@ -14,3 +14,4 @@ gradio==4.26.0
 controlnet_aux
 gdown
 peft
+modelscope
